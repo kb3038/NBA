@@ -10,7 +10,7 @@
 
 NBA_player_datapoint <- function(input_year){
 library(magrittr, "%>%")
-NBA %>%
+  NBA_data %>%
   dplyr::filter(Year == input_year & Player == "Michael Jordan*") %>%
   dplyr::select(PTS)
 }

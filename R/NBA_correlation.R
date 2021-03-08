@@ -13,7 +13,7 @@
 NBA_correlation <- function(input_year){
   library(magrittr, "%>%")
   NBA_numeric <-
-    NBA %>%
+    NBA_data %>%
     dplyr::filter(Year == input_year) %>%
     purrr::keep(is.numeric)
 
@@ -22,5 +22,3 @@ NBA_correlation <- function(input_year){
     dplyr::select (-(Year))
   stats::cor(NBA_numeric_drop_na)
 }
-
-NBA_correlation(1995)

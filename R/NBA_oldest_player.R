@@ -10,7 +10,7 @@
 
 NBA_oldest_player <- function(input_year){
   library(magrittr, "%>%")
-  NBA %>%
+  NBA_data %>%
     dplyr::filter(Year == input_year) %>%
     dplyr::arrange(desc(Age), Player) %>%
     dplyr::select(Player) %>%
